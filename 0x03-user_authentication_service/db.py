@@ -66,3 +66,14 @@ class DB:
                     return usr
         raise NoResultFound
 
+    def update_user(self, user_id: int, **kwargs) -> None:
+        """
+        Update a user's attributes
+        Args:
+            user_id (int): user's id
+            kwargs (dict): dict of key, value pairs representing the
+                           attributes to update and the values to update
+                           them with
+        Return:
+
+
