@@ -90,6 +90,10 @@ def log_out(session_id: str) -> None:
     else:
         assert(r.status_code == 200)
 
+def reset_password_token(email: str) -> str:
+    """
+    Test for reset password token with the given email.
+
 
 
 
