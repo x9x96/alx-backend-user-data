@@ -61,4 +61,17 @@ def log_in(email: str, password: str) -> str:
     assert(resp.json() == {"email": email, "message": "logged in"})
     return resp.cookies['session_id']
 
+def profile_logged(session_id: str) -> None:
+    """
+    Test for profile with being logged in with session_id.
+    Args:
+        session_id: The session_id of the user.
+    Returns:
+        None
+    """
+    cookies = {'session_id': session_id}
+    r = requests.get('http://127.0.0.1:5000/profile',
+                     cookies=cookies)
+    assert(r.status_code == 200)
+
 
